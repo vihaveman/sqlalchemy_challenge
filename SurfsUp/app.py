@@ -67,11 +67,11 @@ def precipitation():
     results = session.query(Measurement.date, Measurement.prcp).\
     filter(Measurement.date >= one_year_ago.date()).all()
     # Dict with date as the key and prcp as the value
-    last_year_precipitation = []
+    precipitation_last_year = []
     for result in results:
         precipitation_dict = {}
         precipitation_dict[result.date] = result.prcp
-        last_year_precipitation.append(precipitation_dict)
+        precipitation_last_year.append(precipitation_dict)
 
     session.close()
 
